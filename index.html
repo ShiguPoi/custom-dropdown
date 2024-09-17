@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div class="dropdown">
+        <button class="dropbtn" id="selectItem">Select an item<i class="fa fa-caret-down"></i></button>
+        <div class="dropdown-content">
+            <div class="dropdown-list" onclick="set(this)">item 1</div>
+            <div class="dropdown-list" onclick="set(this)">item 2</div>
+            <div class="dropdown-list" onclick="set(this)">item 3</div>
+            <div class="dropdown-list" onclick="set(this)">item 4</div>
+            <div class="dropdown-list" onclick="set(this)">item 5</div>
+        </div>
+
+    </div>
+
+</body>
+</html>
+
+<script>
+function set(element){
+    document.getElementById("selectItem").textContent = element.textContent ;
+    let items = document.getElementsByClassName("dropdown-list")
+    for (let i = 0; i < items.length; i++){
+        items[i].style.backgroundColor = "white";
+    }
+    element.style.backgroundColor = "rgb(127, 225, 137)";
+    console.log(element.textContent)
+}
+</script>
+
+<style>
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: 2px solid black;
+  border-radius: 5px;
+  outline: none;
+  color: rgb(0, 0, 0);
+  background-color: gainsboro;
+  padding: 14px 16px;
+  min-width: 160px;
+  background-color: inherit;
+  font-family: inherit;
+  text-align: left;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: rgb(195, 173, 210);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-list {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-list:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
